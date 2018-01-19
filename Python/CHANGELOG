@@ -1,0 +1,9 @@
+#
+#   CHANGELOG
+#
+
+DoubleLinkedList.py
+|----- Added the Iterator Method
+
+GraphExtended.py
+|----- Added the Conversion Tool for the Brandes's Algorithmn
