@@ -1,0 +1,2707 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=macintosh">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link rel=File-List href="Grafo%20Aciclico.fld/filelist.xml">
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\,";
+	mso-displayed-thousand-separator:"\.";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+.style0
+	{mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	white-space:nowrap;
+	mso-rotate:0;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border:none;
+	mso-protection:locked visible;
+	mso-style-name:Normale;
+	mso-style-id:0;}
+td
+	{mso-style-parent:style0;
+	padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-protection:locked visible;
+	white-space:nowrap;
+	mso-rotate:0;}
+-->
+</style>
+</head>
+
+<body link="#0563C1" vlink="#954F72">
+
+<table border=0 cellpadding=0 cellspacing=0 width=722 style='border-collapse:
+ collapse;table-layout:fixed;width:541pt'>
+ <col width=75 style='mso-width-source:userset;mso-width-alt:2389;width:56pt'>
+ <col width=208 style='mso-width-source:userset;mso-width-alt:6656;width:156pt'>
+ <col width=132 style='mso-width-source:userset;mso-width-alt:4224;width:99pt'>
+ <col width=136 style='mso-width-source:userset;mso-width-alt:4352;width:102pt'>
+ <col width=83 style='mso-width-source:userset;mso-width-alt:2645;width:62pt'>
+ <col width=88 style='mso-width-source:userset;mso-width-alt:2816;width:66pt'>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 width=75 style='height:16.0pt;width:56pt;font-size:12.0pt;
+  color:white;font-weight:700;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #4472C4;
+  border-right:none;border-bottom:none;border-left:.5pt solid #4472C4;
+  background:#4472C4;mso-pattern:#4472C4 none'>Test N:</td>
+  <td width=208 style='width:156pt;font-size:12.0pt;color:white;font-weight:
+  700;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none;background:#4472C4;mso-pattern:#4472C4 none'>Tempo
+  di Esecuzione ( se<span style='display:none'>c )</span></td>
+  <td width=132 style='width:99pt;font-size:12.0pt;color:white;font-weight:
+  700;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none;background:#4472C4;mso-pattern:#4472C4 none'>Numero
+  di Nodi</td>
+  <td width=136 style='width:102pt;font-size:12.0pt;color:white;font-weight:
+  700;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none;background:#4472C4;mso-pattern:#4472C4 none'>Numero
+  di Archi</td>
+  <td width=83 style='width:62pt;font-size:12.0pt;color:white;font-weight:700;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none;background:#4472C4;mso-pattern:#4472C4 none'>|V|*|E|</td>
+  <td width=88 style='width:66pt;font-size:12.0pt;color:white;font-weight:700;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none;background:#4472C4;mso-pattern:#4472C4 none'>Tipologia</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>1</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,000211</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>10</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>9</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>90</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>2</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,000673056</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>21</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>20</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>420</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>3</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,001255274</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>31</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>30</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>930</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>4</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,002032995</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>42</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>41</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1722</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>5</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,002983093</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>52</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>51</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>2652</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>6</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,004119158</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>63</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>62</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>3906</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>7</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,005320072</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>73</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>72</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>5256</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>8</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,00648427</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>84</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>83</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>6972</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>9</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,008116961</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>94</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>93</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>8742</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>10</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,009864807</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>105</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>104</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>10920</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>11</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,011777163</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>115</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>114</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>13110</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>12</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,013750076</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>126</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>125</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>15750</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>13</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,015901804</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>136</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>135</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>18360</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>14</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,018110991</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>147</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>146</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>21462</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>15</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,02088213</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>157</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>156</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>24492</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>16</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,023229122</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>168</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>167</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>28056</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>17</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,027034283</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>178</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>177</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>31506</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>18</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,029812098</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>189</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>188</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>35532</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>19</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,032751799</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>199</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>198</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>39402</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>20</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,035674095</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>210</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>209</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>43890</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>21</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,040808201</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>220</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>219</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>48180</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>22</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,043129206</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>231</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>230</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>53130</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>23</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,045991898</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>241</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>240</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>57840</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>24</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,049996853</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>252</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>251</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>63252</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>25</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,054506063</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>262</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>261</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>68382</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>26</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,058202982</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>273</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>272</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>74256</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>27</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,061925888</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>283</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>282</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>79806</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>28</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,066011906</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>294</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>293</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>86142</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>29</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,072367191</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>304</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>303</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>92112</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>30</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,075737715</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>315</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>314</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>98910</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>31</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,081244946</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>325</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>324</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>105300</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>32</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,085986137</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>336</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>335</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>112560</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>33</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,096627951</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>346</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>345</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>119370</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>34</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,101320267</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>357</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>356</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>127092</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>35</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,105928183</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>367</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>366</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>134322</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>36</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,113620996</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>378</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>377</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>142506</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>37</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,117594242</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>388</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>387</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>150156</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>38</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,124710798</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>399</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>398</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>158802</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>39</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,132699966</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>409</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>408</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>166872</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>40</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,136142015</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>420</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>419</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>175980</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>41</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,143037796</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>430</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>429</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>184470</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>42</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,148866892</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>441</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>440</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>194040</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>43</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,15737009</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>451</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>450</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>202950</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>44</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,162862062</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>462</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>461</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>212982</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>45</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,168370008</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>472</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>471</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>222312</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>46</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,177122831</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>483</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>482</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>232806</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>47</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,183475971</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>493</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>492</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>242556</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>48</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,191015005</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>504</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>503</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>253512</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>49</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,199961185</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>514</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>513</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>263682</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>50</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,207133055</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>525</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>524</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>275100</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>51</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,213835001</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>535</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>534</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>285690</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>52</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,22294569</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>546</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>545</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>297570</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>53</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,232566118</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>556</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>555</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>308580</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>54</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,241928101</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>567</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>566</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>320922</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>55</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,250792265</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>577</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>576</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>332352</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>56</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,255558014</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>588</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>587</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>345156</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>57</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,268072128</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>598</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>597</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>357006</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>58</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,276596069</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>609</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>608</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>370272</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>59</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,28610301</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>619</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>618</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>382542</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>60</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,293351889</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>630</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>629</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>396270</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>61</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,302223921</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>640</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>639</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>408960</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>62</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,316711903</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>651</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>650</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>423150</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>63</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,32336092</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>661</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>660</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>436260</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>64</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,331348896</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>672</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>671</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>450912</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>65</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,339864016</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>682</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>681</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>464442</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>66</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,375241995</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>693</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>692</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>479556</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>67</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,383257151</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>703</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>702</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>493506</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>68</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,393085003</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>714</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>713</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>509082</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>69</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,401669025</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>724</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>723</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>523452</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>70</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,412950039</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>735</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>734</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>539490</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>71</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,42397213</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>745</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>744</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>554280</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>72</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,468097925</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>756</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>755</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>570780</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>73</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,451572895</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>766</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>765</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>585990</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>74</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,460637331</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>777</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>776</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>602952</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>75</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,496393919</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>787</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>786</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>618582</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>76</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,501563311</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>798</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>797</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>636006</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>77</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,516156912</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>808</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>807</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>652056</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>78</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,539023876</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>819</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>818</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>669942</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>79</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,543427944</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>829</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>828</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>686412</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>80</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,553932905</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>840</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>839</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>704760</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>81</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,568438053</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>850</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>849</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>721650</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>82</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,578969002</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>861</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>860</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>740460</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>83</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,598779202</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>871</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>870</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>757770</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>84</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,615198851</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>882</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>881</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>777042</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>85</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,620193005</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>892</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>891</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>794772</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>86</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,642659187</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>903</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>902</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>814506</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>87</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,656330109</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>913</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>912</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>832656</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>88</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,661275864</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>924</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>923</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>852852</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>89</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,683033228</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>934</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>933</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>871422</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>90</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,688348293</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>945</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>944</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>892080</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>91</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,719624996</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>955</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>954</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>911070</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>92</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,721984863</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>966</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>965</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>932190</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>93</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,732420921</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>976</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>975</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>951600</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>94</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,756317854</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>987</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>986</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>973182</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>95</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,764032125</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>997</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>996</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>993012</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>96</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,782628059</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1008</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1007</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1015056</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>97</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,807452917</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1018</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1017</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1035306</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>98</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,812119007</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1029</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1028</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1057812</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>99</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,839123964</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1039</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1038</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1078482</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 align=right style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>100</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>0,859597206</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1050</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1049</td>
+  <td align=right style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1101450</td>
+  <td style='font-size:12.0pt;color:black;font-weight:400;text-decoration:none;
+  text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;border-bottom:
+  none;border-left:none'>Aciclico</td>
+ </tr>
+</table>
+
+</body>
+
+</html>

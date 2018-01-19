@@ -1,0 +1,3010 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=macintosh">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link rel=File-List href="Grafo%20Ciclico.fld/filelist.xml">
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\,";
+	mso-displayed-thousand-separator:"\.";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+.style0
+	{mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	white-space:nowrap;
+	mso-rotate:0;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border:none;
+	mso-protection:locked visible;
+	mso-style-name:Normale;
+	mso-style-id:0;}
+td
+	{mso-style-parent:style0;
+	padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-protection:locked visible;
+	white-space:nowrap;
+	mso-rotate:0;}
+.xl65
+	{mso-style-parent:style0;
+	mso-number-format:"\@";}
+-->
+</style>
+</head>
+
+<body link="#0563C1" vlink="#954F72">
+
+<table border=0 cellpadding=0 cellspacing=0 width=922 style='border-collapse:
+ collapse;table-layout:fixed;width:691pt'>
+ <col width=85 style='mso-width-source:userset;mso-width-alt:2730;width:64pt'>
+ <col width=211 style='mso-width-source:userset;mso-width-alt:6741;width:158pt'>
+ <col width=160 style='mso-width-source:userset;mso-width-alt:5120;width:120pt'>
+ <col width=179 style='mso-width-source:userset;mso-width-alt:5717;width:134pt'>
+ <col width=163 style='mso-width-source:userset;mso-width-alt:5205;width:122pt'>
+ <col width=124 style='mso-width-source:userset;mso-width-alt:3968;width:93pt'>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 width=85 style='height:16.0pt;width:64pt;font-size:12.0pt;
+  color:white;font-weight:700;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border-top:.5pt solid #4472C4;
+  border-right:none;border-bottom:none;border-left:.5pt solid #4472C4;
+  background:#4472C4;mso-pattern:#4472C4 none'>Test N:</td>
+  <td width=211 style='width:158pt;font-size:12.0pt;color:white;font-weight:
+  700;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none;background:#4472C4;mso-pattern:#4472C4 none'>Tempo
+  di Esecuzione ( sec<span style='display:none'> )</span></td>
+  <td width=160 style='width:120pt;font-size:12.0pt;color:white;font-weight:
+  700;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none;background:#4472C4;mso-pattern:#4472C4 none'>Numero
+  di Nodi</td>
+  <td width=179 style='width:134pt;font-size:12.0pt;color:white;font-weight:
+  700;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none;background:#4472C4;mso-pattern:#4472C4 none'>Numero
+  di Archi</td>
+  <td width=163 style='width:122pt;font-size:12.0pt;color:white;font-weight:
+  700;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none;background:#4472C4;mso-pattern:#4472C4 none'>|V|*|E|</td>
+  <td width=124 style='width:93pt;font-size:12.0pt;color:white;font-weight:
+  700;text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none;background:#4472C4;mso-pattern:#4472C4 none'>Tipologia</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>1</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>0.0006659030914306641<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>10</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>59</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>590</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>2</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>0.004252910614013672<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>21</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>261</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>5481</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>3</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>0.01252889633178711<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>31</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>595</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>18445</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>4</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>0.030082225799560547<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>42</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1120</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>47040</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>5</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>0.053642988204956055<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>52</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1700</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>88400</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>6</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>0.09302902221679688<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>63</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>2504</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>157752</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>7</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>0.14135122299194336<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>73</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>3318</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>242214</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>8</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>0.2128891944885254<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>84</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>4425</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>371700</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>9</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>0.2979452610015869<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>94</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>5575</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>524050</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>10</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>0.4133439064025879<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>105</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>6980</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>732900</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>11</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>0.5399701595306396<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>115</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>8384</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>964160</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>12</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>0.703606128692627<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>126</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>9978</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1257228</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>13</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>0.874330997467041<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>136</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>11628</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1581408</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>14</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>1.1096649169921875<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>147</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>13664</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>2008608</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>15</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>1.334244728088379<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>157</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>15511</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>2435227</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>16</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>1.641977071762085<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>168</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>17732</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>2978976</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>17</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>1.9584650993347168<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>178</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>20001</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>3560178</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>18</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>2.342822313308716<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>189</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>22481</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>4248909</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>19</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>2.731290102005005<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>199</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>24955</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>4966045</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>20</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>3.1974098682403564<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>210</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>27741</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>5825610</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>21</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>3.666597843170166<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>220</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>30531</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>6716820</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>22</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>4.245980739593506<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>231</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>33569</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>7754439</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>23</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>4.8230767250061035<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>241</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>36602</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>8821082</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>24</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>5.500957012176514<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>252</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>39957</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>10069164</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>25</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>6.180771112442017<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>262</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>43234</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>11327308</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>26</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>7.001891136169434<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>273</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>46936</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>12813528</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>27</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>7.757642984390259<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>283</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>50352</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>14249616</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>28</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>8.732160091400146<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>294</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>54585</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>16047990</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>29</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>9.606351852416992<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>304</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>58354</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>17739616</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>30</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>10.718859672546387<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>315</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>62645</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>19733175</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>31</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>11.704399824142456<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>325</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>66406</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>21581950</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>32</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>13.000284910202026<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>336</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>71400</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>23990400</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>33</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>14.172043085098267<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>346</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>75568</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>26146528</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>34</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>15.581786870956421<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>357</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>80479</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>28731003</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>35</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>16.918380975723267<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>367</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>85005</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>31196835</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>36</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>18.480433225631714<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>378</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>90315</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>34139070</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>37</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>20.072441816329956<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>388</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>95200</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>36937600</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>38</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>21.69586491584778<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>399</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>100373</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>40048827</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>39</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>23.353492975234985<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>409</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>105725</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>43241525</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>40</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>25.281556129455566<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>420</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>111238</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>46719960</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>41</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>27.25836205482483<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>430</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>116711</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>50185730</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>42</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>29.3161301612854<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>441</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>122793</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>54151713</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>43</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>31.313563108444214<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>451</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>128466</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>57938166</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>44</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>33.65601682662964<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>462</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>134806</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>62280372</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>45</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>35.91837811470032<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>472</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>140600</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>66363200</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>46</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>38.44685077667236<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>483</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>147230</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>71112090</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>47</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>40.952534198760986<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>493</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>153342</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>75597606</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>48</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>43.600162982940674<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>504</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>160215</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>80748360</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>49</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>46.32330107688904<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>514</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>166869</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>85770666</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>50</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>49.46886110305786<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>525</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>174162</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>91435050</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>51</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>52.08293581008911<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>535</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>180526</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>96581410</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>52</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>55.45267081260681<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>546</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>188284</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>102803064</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>53</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>58.5634880065918<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>556</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>195256</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>108562336</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>54</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>62.33034920692444<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>567</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>202954</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>115074918</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>55</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>65.23850107192993<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>577</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>210010</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>121175770</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>56</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>69.72202181816101<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>588</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>218185</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>128292780</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>57</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>73.09407210350037<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>598</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>225215</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>134678570</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>58</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>77.04258894920349<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>609</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>234414</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>142758126</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>59</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>80.80794191360474<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>619</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>241926</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>149752194</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>60</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>85.3151261806488<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>630</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>250788</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>157996440</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>61</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>89.35671401023865<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>640</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>258488</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>165432320</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>62</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>94.27217507362366<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>651</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>267761</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>174312411</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>63</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>98.21524596214294<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>661</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>275815</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>182313715</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>64</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>103.22705006599426<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>672</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>285060</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>191560320</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>65</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>111.16116905212402<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>682</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>293827</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>200390014</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>66</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>114.03181385993958<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>693</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>303300</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>210186900</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>67</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>118.50532388687134<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>703</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>312201</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>219477303</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>68</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>124.1443600654602<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>714</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>322215</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>230061510</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>69</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>132.13641095161438<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>724</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>331299</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>239860476</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>70</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>135.40340185165405<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>735</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>340857</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>250529895</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>71</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>140.8358690738678<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>745</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>350815</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>261357175</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>72</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>147.05681896209717<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>756</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>360789</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>272756484</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>73</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>153.23262190818787<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>766</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>370425</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>283745550</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>74</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>160.5924460887909<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>777</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>381161</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>296162097</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>75</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>165.98113083839417<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>787</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>391035</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>307744545</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>76</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>176.555828332901<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>798</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>401965</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>320768070</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>77</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>180.16671299934387<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>808</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>412131</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>333001848</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>78</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>187.7892620563507<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>819</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>423346</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>346720374</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>79</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>196.78757500648499<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>829</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>434456</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>360164024</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>80</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>202.63922810554504<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>840</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>446126</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>374745840</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>81</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>209.78636479377747<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>850</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>456442</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>387975700</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>82</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>218.27674770355225<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>861</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>468486</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>403366446</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>83</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>226.1985306739807<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>871</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>479670</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>417792570</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>84</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>236.58211302757263<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>882</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>491552</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>433548864</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>85</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>242.49854516983032<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>892</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>502876</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>448565392</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>86</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>254.92075324058533<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>903</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>515262</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>465281586</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>87</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>259.48873019218445<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>913</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>526433</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>480633329</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>88</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>268.5136528015137<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>924</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>539708</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>498690192</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>89</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>278.7509129047394<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>934</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>551776</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>515358784</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>90</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>288.388503074646<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>945</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>564129</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>533101905</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>91</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>298.37039399147034<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>955</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>576314</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>550379870</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>92</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>310.58015179634094<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>966</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>589711</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>569660826</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>93</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>317.6489350795746<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>976</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>601004</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>586579904</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>94</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>330.92746210098267<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>987</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>615404</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>607403748</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>95</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>339.41476011276245<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>997</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>628395</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>626509815</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>96</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>347.796795129776<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1008</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>642270</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>647408160</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>97</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>356.48211002349854<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1018</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>654618</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>666401124</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>98</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>369.1012120246887<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1029</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>668381</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>687764049</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:.5pt solid #4472C4'>99</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>382.72755694389343<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>1039</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>682165</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:none;border-left:none'>708769435</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:none;border-left:none'><span style='mso-spacerun:yes'>&nbsp;
+  </span>Ciclico</td>
+ </tr>
+ <tr height=21 style='height:16.0pt'>
+  <td height=21 class=xl65 style='height:16.0pt;font-size:12.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:.5pt solid #4472C4;border-left:.5pt solid #4472C4'>100</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:.5pt solid #4472C4;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>391.7087960243225<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:.5pt solid #4472C4;border-left:none'>1050</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:.5pt solid #4472C4;border-left:none'>696277</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:none;
+  border-bottom:.5pt solid #4472C4;border-left:none'>731090850</td>
+  <td class=xl65 style='font-size:12.0pt;color:black;font-weight:400;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border-top:.5pt solid #4472C4;border-right:.5pt solid #4472C4;
+  border-bottom:.5pt solid #4472C4;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp; </span>Ciclico</td>
+ </tr>
+</table>
+
+</body>
+
+</html>
