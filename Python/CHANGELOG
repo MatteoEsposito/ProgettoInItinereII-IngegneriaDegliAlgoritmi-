@@ -3,7 +3,7 @@
 #
 
 DoubleLinkedList.py
-|----- Added the Iterator Method
+|----- Aggiunto il metodo per Iterare sulle Liste Doppiamente Collegate
 
 GraphExtended.py
-|----- Added the Conversion Tool for the Brandes's Algorithmn
+|----- Aggiunta la Funzione per Convertire il grafo nella struttura dati ottimale per l'Algoritmo di Brandes
