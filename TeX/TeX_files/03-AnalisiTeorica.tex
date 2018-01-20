@@ -1,0 +1,21 @@
+\chapter{Analisi delle Prestazioni: Caso Peggiore}%: Ricordati di inserire anceh il caso uno dei due vuoto}
+\section{Analisi Teorica}
+L'analisi delle prestazioni, nel caso peggiore, consente di fatto di stabilire quanto sia pi\'u o meno performante un dato algoritmo. L'analisi di questo algoritmo in particolare consta di diversi snipset di codice che contengono prevalentemente operazioni il cui tempo di esecuzione sia pari all'$O(m)$ per il Corollario 4 del Paper di Brandes, il resto dell'algoritmo è dominato dal ciclo esterno di Complessità pari ad un O(n).
+\newline
+\newline
+
+\input{./TeX_files/Python_snipset/01} % iniziallizzazione dell'Algoritmo e delle Struttre Dati Ausiliarie
+
+\input{./TeX_files/Python_snipset/02} % Calcolo dei cammini minimi e delle dipendenze
+\newline 
+\newpage
+%\paragraph{Attenzione:} per coerenza e continuità con quanto esposto prima nella descrizione dell'algoritmo continueremo con l'ipotesi che l'albero B sia più alto dell'albero A \newline\newline
+
+
+\input{./TeX_files/Python_snipset/03} % Calcolo della Betweennes Centrality
+
+
+\paragraph{Riepilogo:}
+	Il codice così analizzato ha evidenziato il fatto che l'algoritmo indipendentemente dalla tipologia di grafo e dallo scenario della funzione principale \emph{brandes(V,A))} risulta costare un tempo simil-quadratico. L'analisi teorica ci conferma che l'algoritmo asintoticamente, quindi per grandi quantit\'a di dati, è un $O(n*m) = O(|V|*|E|) \cong O(n*(n-1)) \cong O(n^2)$
+
+% \input{./TeX_files/Python_snipset/09} % Riepilogo

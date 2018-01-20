@@ -1,0 +1,87 @@
+% Matteo Esposito
+% Corso di Ingegenria degli Algoritimi
+% Dicembre 2017
+% Main.tex
+
+%--------------- Package Usati ---------------%
+\documentclass[10pt,a4paper,oneside]{matc3mem}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=10  mm,
+	top=20mm,
+	right=10 mm,
+}
+\usepackage{tikz}
+\usepackage{multicol} 
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{listings,lstautogobble}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage[ampersand]{easylist}
+\usepackage{float}
+\usepackage[italian]{babel}
+\usetikzlibrary{calc}
+
+\definecolor{RoyalBlue}{cmyk}{1, 0.50, 0, 0}
+
+\lstset{language=Python,
+	keywordstyle=\color{RoyalBlue},
+	basicstyle=\scriptsize\ttfamily,
+	commentstyle=\ttfamily\itshape\color{gray},
+	stringstyle=\ttfamily,
+	showstringspaces=false,
+	breaklines=true,
+	frameround=ffff,
+	frame=single,
+	rulecolor=\color{black},
+	autogobble=true
+}
+\usepackage{showexpl}
+\usepackage{zlmtt}
+\usepackage{fancyvrb}
+\usepackage{ragged2e}
+\usepackage{titling}
+%----------------------------------------------%
+
+
+\begin{document}
+
+%--------------- Trick Usati ---------------%
+\renewcommand\maketitlehooka{\null\mbox{}\vfill}
+\renewcommand\maketitlehookd{\vfill\null}
+%------------------------------------------%
+
+%--------------- Titolo ---------------%
+\author{Matteo Esposito \\ Matricola: 0238638}
+\title{Relazione Progetto in Itinere II \\
+	\large Corso di Ingegneria Degli Algoritmi}
+\date{Gennaio 2018}
+%-------------------------------------%
+
+%--------------- Comandi Iniziali---------------%
+\frontmatter
+\begin{titlingpage}
+\maketitle
+\end{titlingpage}
+\newpage
+\tableofcontents
+%----------------------------------------------%
+
+%--------------- Capitoli ---------------%
+\mainmatter
+\include{./TeX_files/01-Abstract}
+\include{./TeX_files/06-RichiamiTeorici}
+\include{./TeX_files/02-Algoritmo}
+\include{./TeX_files/03-AnalisiTeorica}
+\include{./TeX_files/04-AnalisiReale}
+\include{./TeX_files/07-Bibliografia}
+\include{./TeX_files/05-Conclusione}
+
+%--------------------------------------%
+
+\backmatter
+\end{document}

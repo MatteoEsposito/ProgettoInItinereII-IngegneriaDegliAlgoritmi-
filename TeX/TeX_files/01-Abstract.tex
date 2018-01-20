@@ -1,0 +1,25 @@
+\chapter{Abstract}
+\section{Premessa}
+L'algoritmo presentato vorrebbe tentare di risolvere il problema N.2 il quale chiedeva:\\ 
+\begin{center}
+	\emph{"Sia dato un grafo non orientato e non pesato  G . Data una coppia di nodi ($n_1,n_2$)  in  G , la distanza dist($n_1,n_2$)  \'e il minor numero di archi necessari a connettere  $n_1$  e  $n_2$. Un nodo  \'e  medio di $n_1$ ed $n_2$ se e solo se \'e equidistante da $n_1$ e  $ n_2$,  ovvero se $dist(n_1,m)$=  $dist(m,n_2)$ . Progettare e implementare un algoritmo che, dato un grafo non orientato e non pesato  G , determini il nodo m  *  che risulta essere  medio per il maggior numero di coppie di nodi ."}\\
+\end{center}
+L'approccio risolutivo consta dell'utilizzo di operazioni pre-esistenti, forniteci attraverso le classi e gli snipset presenti sulla pagina di GitHub del Corso, con una classe "GraphExtended" che riporta alcune funzioni il cui scopo \'e estendere ulteriormente la classe GraphIncidenceList. Il tempo di esecuzione totale nel caso peggiore risulta essere $O(|V|*|E|)$ in quanto l'algoritmo scelto per risolvere il problema consta efettivamente di due loop principali nel quale scandendo il singolo nodo scandisce tutti gli archi del grafo.
+L'Algoritmo scelto per la risoluzione era un algoritmo pre-esistente frutto della ricerca accademica del prof. Ulrich Brandes della università di Konstanz in Germania, esso nacque per velocizzare la catalogazione dei nodi di un grafo per i rispettivi indici di "Betweennes Centrality". La mia implementazione, nata dallo pseudo-codice presente all'interno del Paper Accademico di Brandes, ha un differente approccio nella gestione del risultato in quanto, mentre lo scopo dell'originale era restituire semplicemente il dizionario, attraverso operazioni più o meno costanti, ho voluto far restituire all'algoritmo una tripla di elementi così costituita: \\
+\begin{easylist}[itemize]
+	& int: massimo indice di Betweennes Centrality
+	& set: tutti i nodi che condividono la Betweennes Centrality
+	& Dizionario:	
+	&& Chiave: ID Nodo
+	&& Valore: Indice di Betweennes Centrality del nodo \\ \\
+\end{easylist} 
+
+Il codice \'e cos\'i strutturato:
+\begin{easylist}[itemize]
+	& main.py: contenente essenzialmente le DEMO dell'algoritmo
+	& la classe "ProjUtilities":contenente le funzioni principali per la genrazione pseudo-randomica dei grafi
+	& brandes.py: core del progetto contenente l'implementazione in python dello pseudo-codice del prof. Brandes
+	& la succitata classe GraphExtended contenente uno dei core dell'algoritmo stesso \\( la funzione \emph{convertToBradesGraphAlgo()} )
+	& tutte le librerie e classi fornite precedentemente attraverso la pagina di GitHub.
+\end{easylist} 
+

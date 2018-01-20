@@ -1,0 +1,27 @@
+\chapter{Richiami Teorici}
+\section{Criterio di Bellman}
+\begin{center}
+	\emph{"Un vertice $v \in V$ giace su un cammino minimo tra i vertici $s,t \in V$ ( \'e centrale nel loro cammino minimo),\\ se e solo se $dist(s,t)=dist(s,v)+dist(v,t)$}\\
+\end{center}
+
+\section{Betweennes Centrality}
+Nella teoria dei grafi, la \emph{Betweennes Centrality} è una misura della centralità in un grafo basata su cammini minimi. Per ogni coppia di vertici in un grafo connesso, esiste almeno un cammino minimo tra i vertici in modo tale che o il numero degli archi attraversati dal percorso (per i grafi non pesati) o la somma dei pesi dei bordi (per i grafi pesati ) è ridotto al minimo. La \emph{Betweennes Centrality}  per ciascun vertice è il numero di questi cammini minimi che attraversano il vertice.
+
+\section{Dipendeza tra nodi}
+Sia $G=(V,E)$ un \emph{grafo} e siano $s$,$t$ una coppia fissa di nodi del \emph{grafo}. Sia $\delta_{st} $ il numero di cammini minnimi tra $s$ e $t$ e sia $\delta_{sv}(V)$ il numero di cammini minimi che passano per $v$. Definiamo allora \emph{dipendenza} di un nodo sorgente $s$ su di un vertice $v$ come segue: \\
+		$$
+			\delta_s(v) = \sum_{t \in V}^{} \frac{\delta_{st}(v)}{\delta_{st}}
+ 		$$
+
+
+\noindent \\ \\ Quanto precede riesce a catturare l'importanza di un nodo $v$ rispetto ad un nodo $s$ e $t$. La Betweennes Centrality di un vertice $v$ allora si può definire come:
+
+$$
+	BC(v) = \sum_{s\neq v \in V} \delta_s(v)
+$$
+
+\noindent \\ \\ L'intuizione di Brandes, partendo da questa relazione, fu proprio rendersi conto che la dipendenza del nodo $v$ soddisfi in realtà la seguente ricorrenza:\\
+$$
+	\delta_s(v) = \sum_{w:v \in pred(s,w)} \frac{\delta_{sv}}{\delta_{sw}}(1 + \delta_s(w))
+$$ 
+\noindent	\\ Con \emph{pred(s,v)} l'insieme dei predecessori di $w$ nel cammino minimo da $s$ a $w$.

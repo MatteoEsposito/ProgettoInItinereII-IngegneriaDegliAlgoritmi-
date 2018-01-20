@@ -1,0 +1,38 @@
+\begin{minipage}{0.49\linewidth}
+	\begin{Verbatim}[frame=topline,numbers=left,label=Codice,framesep=3mm]
+C = dict((v,0) for v in V)
+for s in V:
+	S = []
+	P = dict((w,[]) for w in V)
+	g = dict((t, 0) for t in V); g[s] = 1
+	d = dict((t,-1) for t in V); d[s] = 0
+	Q = deque([])
+	Q.append(s)
+	\end{Verbatim}
+\end{minipage}\hfill
+\begin{minipage}{0.49\linewidth}
+	\begin{Verbatim}
+	L'algoritmo di brandes chiede subito di
+	allocare  spazio  per  un  dizionario C 
+	inizializzando tutte le sue chiavi a 0 
+	ed  indicizzandole  con gli ID dei nodi 
+	del grafo. 
+	L'iterazione principale viene effetuata
+	ponendo come nodo  "s" ( sorgente )
+	uno dopo l'altro tutti i nodi del  grafo, 
+	è lecito quindi asserire che ciò aggiunga 
+	subito una Complessità Temporale pari 
+	ad un O(n).
+	L'algoritmo prosegue poi ad iniziallizare,
+	in ordine: una Pila S, contenente in ordine
+	non crescente di distanza(s,v);
+	un dizionario P di predecessori composto da 
+	quei nodi che giacciono sui cammini minimi;
+	un dizionario sigma ( qui "g") contenente
+	il numero di cammini minimi passanti per 
+	il nodo v; un dizionario delta ( qui "d" )
+	contente i valori di "dependency" del nodo v
+	\end{Verbatim}
+
+\end{minipage}
+\newline \newline

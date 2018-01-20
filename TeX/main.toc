@@ -1,0 +1,31 @@
+\select@language {italian}
+\select@language {italian}
+\contentsline {chapter}{Indice}{i}
+\contentsline {chapter}{\chapternumberline {1}Abstract}{1}
+\contentsline {section}{\numberline {1.1}Premessa}{1}
+\contentsline {chapter}{\chapternumberline {2}Richiami Teorici}{2}
+\contentsline {section}{\numberline {2.1}Criterio di Bellman}{2}
+\contentsline {section}{\numberline {2.2}Betweennes Centrality}{2}
+\contentsline {section}{\numberline {2.3}Dipendeza tra nodi}{2}
+\contentsline {chapter}{\chapternumberline {3}L'Algoritmo}{3}
+\contentsline {paragraph}{Attenzione:}{3}
+\contentsline {section}{\numberline {3.1}Fase Preliminare ( SOLO VERSIONE DEMO )}{3}
+\contentsline {paragraph}{Grafo Generato Aciclico:}{3}
+\contentsline {paragraph}{\newline Grafo Generato Ciclico \newline }{4}
+\contentsline {paragraph}{Attenzione:}{4}
+\contentsline {paragraph}{Attenzione:}{4}
+\contentsline {section}{\numberline {3.2}Inizializzazione}{5}
+\contentsline {section}{\numberline {3.3}Calcolo dei Cammini Minimi}{5}
+\contentsline {section}{\numberline {3.4}Calcolo e somma delle Dipendenze}{5}
+\contentsline {section}{\numberline {3.5}Restituzione del risultato}{5}
+\contentsline {chapter}{\chapternumberline {4}Analisi delle Prestazioni: Caso Peggiore}{6}
+\contentsline {section}{\numberline {4.1}Analisi Teorica}{6}
+\contentsline {paragraph}{Riepilogo:}{7}
+\contentsline {section}{\numberline {4.2}Analisi Reale}{8}
+\contentsline {section}{\numberline {4.3}Alcuni Dati}{8}
+\contentsline {section}{\numberline {4.4}Caratteristiche della Macchina:}{8}
+\contentsline {section}{\numberline {4.5}Andamenti a Confronto}{8}
+\contentsline {chapter}{\chapternumberline {5}Bibliografia}{10}
+\contentsline {section}{\numberline {5.1}L'Algoritmo di Brandes}{10}
+\contentsline {chapter}{\chapternumberline {6}Conclusione}{11}
+\contentsline {section}{\numberline {6.1}Riflessioni Finali}{11}

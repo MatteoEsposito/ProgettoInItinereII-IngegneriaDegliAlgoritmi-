@@ -1,0 +1,65 @@
+\chapter{L'Algoritmo}
+\paragraph{Attenzione:} di seguito verrà analizzato l'algoritmo di Brandes nella sua VERSIONE pura ed originale tralasciando le mie personali modifiche comunque commentate nel codice sorgente ed ininfluenti da un punto di vista di Complessità Temporale.
+
+\section{Fase Preliminare ( SOLO VERSIONE DEMO )}
+$\mathbf{Tempo: O(n^2)}$\\ 	\\
+Nella fase preliminare l'algoritmo crea un grafo, in maniera pseudo-randomica, attraverso i metodi \emph{generateAcycleGraph()} o  \emph{generateCyclicGraph()} ( contenuti in ProjUtilities).
+Il presente metodo, per quanto veloce possa essere il tempo di esecuzione è pari ad un O($n^2$). Chiaramente \'e un metodo esistente solo nella DEMO dell'algoritmo mentre la sua implementazione pura non prevede affatto questa parte ragion per cui nel calcolo totale ho ignorato tale risultato.
+\newline
+\newline
+
+% Albero A
+\paragraph{Grafo Generato Aciclico:}
+\input{./TeX_files/Graph/0}
+
+% Albero B
+\paragraph{\newline Grafo Generato Ciclico \newline}
+\input{./TeX_files/Graph/1}
+
+\paragraph{Attenzione:} per ragioni di DEBUG o di TESTING fornisco di seguito l'Array ed il Dizionario dei due grafi di cui sopra per permetterne la verifica dei risultati. \newline \newline
+%\emph{Grafo Aciclico: \\}
+%V = [ ] \\
+%A = \{\}
+%\newline 
+%\newline
+%\emph{\\ \\ Grafo Ciclico: \\}
+%V = [ ] \\
+%A = \{\}
+
+\emph{ \\Grafo Aciclico: \\ \\}
+V = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27 ]
+\\ \\
+A = \{ 0:[1, 8],  1:[0, 12, 13], 2:[7, 18, 8, 6], 3:[4], 4:[8, 14, 5, 3], 5:[4, 10, 11], 6:[2], 7:[27, 2, 9], 8:[2, 4, 0], 9:[7], 10:[5], 11:[5], 12:[1], 13:[1], 14:[4, 15], 15:[14, 16, 17], 16:[15], 17:[15], 18:[20, 19, 2], 19:[18, 21, 23, 25], 20:[26, 22, 24, 18], 21:[19], 22:[20], 23:[19], 24:[20], 25:[19], 26:[20], 27:[7]\}
+\\ \\
+R: (442.0, \{2\}, \{0: 144.0, 1: 102.0, 2: 442.0, 3: 0, 4: 342.0, 5: 102.0, 6: 0, 7: 102.0, 8: 436.0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 144.0, 15: 102.0, 16: 0, 17: 0, 18: 336.0, 19: 150.0, 20: 150.0, 21: 0, 22: 0, 23: 0, 24: 0, 25: 0, 26: 0, 27: 0\})
+
+
+\emph{\\ \\ Grafo Ciclico: \\ \\}
+V = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+\\ \\
+A = \{ 0:[1, 5], 1:[2, 0, 4, 8], 2:[7, 1, 8, 3], 3:[2, 8, 4, 6], 4:[8, 1, 5, 3], 5:[4, 0], 6:[7, 3], 7:[2, 6], 8:[2, 1, 4, 3] \}
+\\ \\
+R: (17.06666666666667, \{1\}, \{0: 1.9, 1: 17.06666666666667, 2: 17.066666666666666, 3: 17.066666666666666, 4: 17.066666666666666, 5: 1.9, 6: 1.9, 7: 1.9, 8: 4.133333333333334\})
+\\
+\noindent 
+\paragraph{Attenzione:}Come si può evincere dalla quantità di dati e dal Return dell'algoritmo, a grafi complessi corrispondo valori di Betweennes Centrality più complessi e più raffinati, al fine di semplificarne l'analisi è ovviamente implementabile la \emph{normalizzazione} dei dati come è già di per se fatto all'interno di librerie come la NetworkX ( Python ).
+
+
+\newpage
+
+\section{Inizializzazione}
+$\mathbf{Tempo: O(n)}$\\ 	\\
+L'inizializzazione dell'algoritmo consta di alcuni allocamenti preventivi di spazio in memoria, procede quindi ad inizializzare da subito il dizionario "C" ponendo a zero tutti i valori ed indicizzandoli con gli ID dei nodi del grafo. Procede quindi ad iterare su ogni singolo nodo del grafo da cui si evince subito che l'algoritmo si carica di una complessità temporale $O(n)$
+
+\section{Calcolo dei Cammini Minimi}
+$\mathbf{Tempo: O(m)}$\\ 	\\
+Esegue una visita del grafo a partire dall'attuale nodo esaminato ( praticamente una BFS nel caso di grafi non pesati ), la particolarità è il suo tempo di esecuzione che, secondo il Corollario 4 del Paper di Brandes, sia pari ad $O(m)$
+Durante questa visita vengono computati l'insieme \emph{pred(s,v)} dei predecessori che giacciono sui cammini mini ed il numero di quest'ultimi tra $s$ e $v$ ( $\delta_{sv}$)
+
+\section{Calcolo e somma delle Dipendenze}
+$\mathbf{Tempo: O(m)}$\\ 	\\
+Terminato il calcolo dei cammini minimi, del loro numero e la popolazione dell'insieme \emph{pred(s,v)} dei predecessori,  l'algoritmo infine itera su tutti i nodi presenti nella pila salvati durante il calcolo dei cammini minimi e ne computa le rispettive dipendenze rispetto al nodo in esame. Nel corso del calcolo viene costantemente aggiornato l'indice di \emph{Betweennes Centrality} come valore all'interno del dizionario dei risultati la cui corrispondente chiave è rappresentata dall'ID del nodo esaminato.
+
+\section{Restituzione del risultato}
+Al termine del ciclo più esterno avviato con l'inizializzazione dell'algoritmo stesso viene restituito il dizionario contenente tutti gli indici di \emph{Betweennes Centrality} indicizzati proprio dagli ID dei nodi esaminati.
+

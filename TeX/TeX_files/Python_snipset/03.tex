@@ -1,0 +1,37 @@
+\begin{minipage}{0.49\linewidth}
+	\begin{Verbatim}[frame=topline,numbers=left,label=Codice,framesep=3mm]
+	
+temp = dict((v, 0) for v in V)
+	
+while S:
+  w = S.pop()
+  for v in P[w]:
+     temp[v] = temp[v] + (g[v]/g[w]) * (1 + temp[w])
+     if w != s:
+        C[w] = C[w] + temp[w]
+        
+	\end{Verbatim}
+\end{minipage}\hfill
+\begin{minipage}{0.49\linewidth}
+	\begin{Verbatim}
+	 Usando tutte le informazioni sui 
+	 predecessori e sui cammini minimi 
+	 del nodo s passiamo alla 
+	 "propagazione" della "dependency" 
+	 di tali nodi per poi concludere con 
+	 il computo della somma di tutti i 
+	 valori di dipendenza. Dalla Pila S 
+	 viene restituito in ordine non-crescente
+	 di distanza da v un nodo w, 
+	 viene quindi calcolata l'importanza
+	 di v rispetto a tutti  i nodi nell'insieme dei
+	 predecessori P, fintanto che vengono 
+	 considerati nodi diversi dal nodo in
+	 esame s, viene incrementato il 
+	 valore di "importanza" del nodo v 
+	 nel grafo, quindi al termine di questo civlo
+	 viene  essenzialmente calcolata la
+	 "Betweennes Centrality"
+	\end{Verbatim}
+\end{minipage}
+ \newline\newline

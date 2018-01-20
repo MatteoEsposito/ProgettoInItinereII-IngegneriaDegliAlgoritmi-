@@ -1,0 +1,99 @@
+\begin{center}
+	\begin{tikzpicture}[->,>=,shorten >=1pt,auto,node distance=3cm, thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
+	
+	\node[main node] (8) [yshift=.88 cm]{8};
+	\node[main node] (0) [below of =8] {0};
+	\node[main node] (1) [below of=0] {1};
+	\node[main node] (2) [left of=8] {2};
+	\node[main node] (4) [right of=8] {4};
+	\node[main node] (3) [below  of=4] {3};
+	\node[main node] (5) [right of=4] {5};
+	\node[main node] (6) [below of=2] {6};
+	\node[main node] (7) [left of=2] {7};
+	\node[main node] (9) [below left of=7] {9};
+	\node[main node] (27) [above left of=7] {27};
+
+	\node[main node] (10) [above right of=5] {10};
+	\node[main node] (11) [below right of=5] {11};
+	\node[main node] (12) [below left of=1] {12};
+	\node[main node] (13) [below right of=1] {13};
+	\node[main node] (14) [above of=4] {14};
+	\node[main node] (15) [right of=14] {15};
+	\node[main node] (16) [above right of=15] {16};
+	\node[main node] (17) [below right of=15] {17};
+	
+	\node[main node] (18) [above of=2] {18};
+	\node[main node] (19) [right of=18] {19};
+	\node[main node] (20) [left of=18] {20};
+	\node[main node] (21) [above left of=19] {21};
+	\node[main node] (22) [above left of=20] {22};
+	\node[main node] (23) [above of=19] {23};
+	\node[main node] (24) [above of=20] {24};
+	\node[main node] (25) [above right of=19] {25};
+	\node[main node] (26) [left of=20] {26};
+ 	%\coordinate (8) at ($(1)!0.5!(3)$) {8};
+
+	\path[every node/.style={font=\sffamily\small}]
+		(0) 
+		edge node [] {} (1)
+
+		(1)
+		edge node [left] {} (12)
+		edge node [left] {} (13)
+		
+		(2) 
+		edge node [right] {} (8)
+		edge node {} (7)
+		edge node [below] {} (6)
+		
+		(3) 
+
+		
+		(4) 
+		edge node [left] {} (3)
+		edge node [right]   {} (5)
+		edge node [above]	{} (14)
+		
+		(5)
+		edge node [right] {} (10)
+		edge node [right] {} (11)
+		
+		(7)
+		edge node [left] {}(9)
+		edge node [left] {}(27)
+		
+		(8) 
+		edge node [right]	{} (4)
+		edge node [below] {} (0)
+		
+		(15)
+		edge node [right]	{} (16)
+		edge node [right]	{} (17)
+		edge node [left]	{} (14)
+		
+		(18)
+		edge node [below]	{} (2)
+		edge node [right]	{} (19)
+		edge node [left]	{} (20)
+		
+		(19)
+		edge node [left]	{} (21)
+		edge node [above]	{} (23)
+		edge node [right]	{} (25)
+		
+		(20)
+		edge node [above left]	{} (22)
+		edge node [above]	{} (24)
+		edge node [left]	{} (26)
+		;
+		      
+		
+
+	\end{tikzpicture}
+	
+	
+	%/*%
+	%  edge [loop right] node {0.6} (4)
+	%edge [bend right] node[right] {0.2} (1);
+	%*/
+\end{center}

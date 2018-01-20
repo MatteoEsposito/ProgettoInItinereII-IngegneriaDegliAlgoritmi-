@@ -77,7 +77,7 @@ def brandes(V, A):
                     σ[w] = σ[w] + σ[v]
                     P[w].append(v)
 
-        e = dict((v, 0) for v in V)
+        temp = dict((v, 0) for v in V)
 
         #   Ora usando tutte le informazioni sui predecessori e sui cammini minimi del nodo t
         #   Passiamo ora alla "propagazione" della "dependency" di tali nodi per poi concludere con il computo
@@ -90,10 +90,10 @@ def brandes(V, A):
 
             #   Calcolo la "dependency" tra t ed ogni vertice v presente in P
             for v in P[w]:
-                e[v] = e[v] + (σ[v]/σ[w]) * (1 + e[w])
+                temp[v] = temp[v] + (σ[v]/σ[w]) * (1 + temp[w])
 
                 if w != s:
-                    C[w] = C[w] + e[w]
+                    C[w] = C[w] + temp[w]
 
                 #   Modifiche all'algoritmo originale:
                 #   -> aggiunta del check sul valore massimo

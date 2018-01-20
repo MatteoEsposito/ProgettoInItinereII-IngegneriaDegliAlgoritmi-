@@ -1,0 +1,41 @@
+\begin{center}
+	\begin{tikzpicture}[->,>=,shorten >=1pt,auto,node distance=3cm, thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
+	
+	\node[main node] (0) {0};
+	\node[main node] (1) [below of=0] {1};
+	\node[main node] (2) [below left of=1] {2};
+	\node[main node] (3) [below right of=2] {3};
+	\node[main node] (4) [below right of=1] {4};
+	\node[main node] (5) [right of=4] {5};
+	\node[main node] (6) [below of=3] {6};
+	\node[main node] (7) [left of=2] {7};
+	\node[main node] (8) [below of=1, yshift=.88 cm]{8};
+ 	%\coordinate (8) at ($(1)!0.5!(3)$) {8};
+	
+	\path[every node/.style={font=\sffamily\small}]
+		(0) edge node [] {} (1)
+			  edge [bend left] node[] {} (5)
+			
+		(1)	edge node [left] {} (4)
+			 edge node [below] {} (8)
+		(2) edge node [right] {} (1)
+		edge node {} (8)
+		edge node {} (7)
+		(3) edge node [right] {} (2)
+			  edge node [below] {} (6)
+			  edge node [above] {} (8)
+		(4) edge node [left] {} (3)
+		      edge node [right] {} (5)
+		      edge node [left] {} (8)
+		      
+		 (6) edge [bend left] node [] {} (7);
+		
+
+	\end{tikzpicture}
+	
+	
+	%/*%
+	%  edge [loop right] node {0.6} (4)
+	%edge [bend right] node[right] {0.2} (1);
+	%*/
+\end{center}

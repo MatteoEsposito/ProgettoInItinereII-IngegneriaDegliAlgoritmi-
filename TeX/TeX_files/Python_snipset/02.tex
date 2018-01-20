@@ -1,0 +1,46 @@
+\begin{minipage}{0.49\linewidth}
+	\begin{Verbatim}[frame=topline,numbers=left,label=Codice,framesep=3mm]
+ while Q:
+	v = Q.popleft()
+	S.append(v)
+	for w in A[v]:
+	
+		if d[w] < 0:
+			Q.append(w)
+			d[w] = d[v] + 1
+		
+		if d[w] == d[v] + 1:
+			g[w] = g[w] + g[v]
+			P[w].append(v)
+	
+	\end{Verbatim}
+\end{minipage}\hfill
+\begin{minipage}{0.8\linewidth}
+	\begin{Verbatim}
+	L'algoritmo quindi itera su tutti i nodi 
+	presenti nella coda Q ( alll'inizio solo 
+	il nodo sorgente ) quindi appende il
+	nodo attualemnte sotto esame nella
+	lista S. Itera quindi su tutti i nodi
+	adianceti al nodo in esame estratto
+	dalla coda.
+	
+	Si chiede quindi se un nodo non 
+	fosse già stato incontrato ed in caso
+	affermativo lo inserisce in coda a Q
+	e quindi aumenta di 1 il valore di 
+	dipendenza nel nodo in esame.
+	
+	Si chiede inoltre se il nodo v sotto
+	esame giaccia o meno su di un 
+	cammino minimo da s quindi in caso
+	affermativo lo aggiunge alla lista
+	dei predecessori del nodo sorgente
+	preso in esame.
+	
+	Il Ciclo sui nodi adiacenti ad un nodo
+	impiega effettivaemnte O(m) stando
+	iterando essenzialmente su ogni singolo 
+	arco
+	\end{Verbatim}
+\end{minipage}
