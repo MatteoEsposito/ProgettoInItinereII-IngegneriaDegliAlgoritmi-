@@ -52,7 +52,7 @@ def brandes(V, A):
 
         #   L'algoritmo necessita di avere informazioni su tutti i possibili
         #   cammini minimi legati a ciascun nodo, essenzialmente implementiamo
-        #   una BFS
+        #   una simil-BFS
         #   Time Complexity per grafi non pesati O(m)
         while Q:
             v = Q.popleft()
@@ -62,7 +62,7 @@ def brandes(V, A):
             for w in A[v]:
 
                 #   Se trovo per la prima volta il nodo d[w]
-                #   allora lo appendo alla coda Q allora
+                #   allora lo appendo alla coda Q ed
                 #   incremento il valora di dipendenza della
                 #   sorgente dal nodo in esame
 
@@ -79,16 +79,16 @@ def brandes(V, A):
 
         temp = dict((v, 0) for v in V)
 
-        #   Ora usando tutte le informazioni sui predecessori e sui cammini minimi del nodo t
-        #   Passiamo ora alla "propagazione" della "dependency" di tali nodi per poi concludere con il computo
+        #   Passiamo ora alla "propagazione" della "dependency" dei nodi
+        #   nella pila S per poi concludere con il computo
         #   della somma di tutti i valori di dipendenza
         #   Time Complexity per grafi non pesati: O(m)
         while S:
 
-            #   La pila S restituisce i vertici in ordine di distanza non-crescente dal nodo t
+            #   La pila S restituisce i vertici in ordine di distanza non-crescente dal nodo s
             w = S.pop()
 
-            #   Calcolo la "dependency" tra t ed ogni vertice v presente in P
+            #   Calcolo la "dependency" tra s ed ogni vertice w presente in P
             for v in P[w]:
                 temp[v] = temp[v] + (σ[v]/σ[w]) * (1 + temp[w])
 

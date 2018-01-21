@@ -7,7 +7,6 @@
 
 
 from ProjUtilities import generateAcycleGraph, generateCyclicGraph
-from graph.mst import kruskal
 from brandes import brandes
 import time
 
@@ -78,25 +77,6 @@ def prepBenchmark(n,i,d):
     if d == 0:
         #   Genero un grafo Aciclico
         graph = generateAcycleGraph(n)
-
-
-        #   Dalla nuova versione, il grafo viene inizializzato con tutti i nodi connessi
-        #   a tutti con pesi però randomici, allora ora mi genero una Minimo Albero Ricoprente
-        #   sfruttando Kruskal e la sua implementazione che restituisce una lista di archi
-        w_kruskal, mst_kruskal = kruskal(graph)
-
-        if DEBUG:
-            print("\tWeight:", w_kruskal)
-            print("\tMST:", [str(item) for item in mst_kruskal])
-
-        #   Elimino tuti gli archi dal grafo originale
-        for edge in graph.getEdges():
-            graph.deleteEdge(edge.tail, edge.head)
-
-        #   Ora riconnetto il grafo con gli archi del suo Minimo Albero Ricoprente
-        #   secondo l'invocazione precedente dell'algorimto di Kruskal
-        for edge in mst_kruskal:
-            graph.insertEdge(edge.tail, edge.head, edge.weight)
 
         if DEBUG:
             print("Num Nodes:", graph.numNodes())

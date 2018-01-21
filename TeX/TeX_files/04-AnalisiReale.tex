@@ -4,10 +4,10 @@
 	\vspace{-10pt}
 \end{wraptable} 
 \section{Analisi Reale}
-Per dare una "dimostrazione" di quanto detto prima, ovvero che il tempo dell'algoritmo è un $O(|V|*|E|)$ ho pensato di realizzare un test, chiedendo al time di python di misurare 100 chiamate ( con elementi decrescenti ) ed osservarne il tempo di esecuzione.
+Per dare una "dimostrazione" di quanto detto prima, ovvero che il tempo dell'algoritmo sia un $O(|V|*|E|)$ ho pensato di realizzare un test, chiedendo al time di python di misurare 100 chiamate ( con elementi decrescenti ) ed osservarne il tempo di esecuzione.
 \section{Alcuni Dati}
 Nella tabella a fianco si possono osservare subito alcuni dati rilevanti scelti tra le prime e le ultime iterazioni. Ad ogni iterazione, per cercare di pesudo-randomizzare i dati alcune parti della funzioni \emph{generateCyclic/AcycleGraph} venivano modificate ad-hoc im tempo reale in relazione all'attuale i-esima iterazione. Tutti i dati raccolti durante le simulazioni  sono poi stati caricati in due fogli excel pronti per essere elaborati da Matlab per ottenere un grafico che possa mettere a confronto numero di nodi/tempo di esecuzione con il numero di nodi/$|V|*|E|$. Notevole di fatti è il dato del tempo di esecuzione ( espresso in secondi ) tranne in rare occasioni, da 1050 nodi a 10, si potrebbe dire che è rimasto "costante nel suo andamento simil-quadratico" rispetto alla quantità di nodi nell'input.
-\section{Caratteristiche della Macchina:}I test sono stati effettuati su di un computer notte-tempo aò fine di evitare qualsiasi interferenza da altri processi per l'accesso al disco o alle altre risorse del computer. La macchina su cui ho effettuato i test presenta le seguenti caratteristiche:
+\section{Caratteristiche della Macchina:}I test sono stati effettuati su di un computer notte-tempo al fine di evitare qualsiasi interferenza da altri processi per l'accesso al disco o alle altre risorse del computer. La macchina su cui ho effettuato i test presenta le seguenti caratteristiche:
 \begin{easylist}[itemize]
 		& Produttore Apple -  Modello: 27"Mid2010
 		& Processore: 2,8 GHz Intel Core i5
@@ -16,7 +16,7 @@ Nella tabella a fianco si possono osservare subito alcuni dati rilevanti scelti 
 \end{easylist}
 
 \section{Andamenti a Confronto}
-Attraverso Matlab, ho ottenuto il seguente grafico che evidenzia ancora di più l'andamento temporale dell'algoritmo e del $|V|*|E|$.\\ \\
+Attraverso Matlab, ho ottenuto i seguenti grafici che evidenziano ancora di più l'andamento temporale dell'algoritmo e del $|V|*|E|$.\\ \\
 \input{TeX_files/comparisonT}
 
 \noindent Come si evince dalle Figure 4.1-2, la complessità temporale studiata teoricamente nell'analisi teorica dell'algoritmo è risultata corretta e supportata da evidenze sperimentali. Data una ricerca più approfondita in materia, l'algoritmo di Brandes detiene tutt'ora adesso il "primato" ( se pur nel recente periodo sia stato ampliato e ancora più raffinato ), pur essendo un algoritmo di carattere statico e avendo validissimi algoritmi di tipologia euristica come avversari. La peculiarità del presente algoritmo è insita nella "intrinseca parallelità". É infatti possibile modificare l'algoritmo e adattarlo ad una tipologia di approccio clusteristico nel quale si può demandare il calcolo dei cammini minimi e delle dipendenze a diversi core di elaborazione e quindi eseguire il tutto in parallelo.

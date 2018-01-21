@@ -1,5 +1,5 @@
 \chapter{L'Algoritmo}
-\paragraph{Attenzione:} di seguito verrà analizzato l'algoritmo di Brandes nella sua VERSIONE pura ed originale tralasciando le mie personali modifiche comunque commentate nel codice sorgente ed ininfluenti da un punto di vista di Complessità Temporale.
+\paragraph{Attenzione:} di seguito verrà analizzato l'algoritmo di Brandes nella sua versione pura ed originale tralasciando le mie personali modifiche comunque commentate nel codice sorgente ed ininfluenti da un punto di vista di Complessità Temporale.
 
 \section{Fase Preliminare ( SOLO VERSIONE DEMO )}
 $\mathbf{Tempo: O(n^2)}$\\ 	\\
@@ -58,7 +58,7 @@ Durante questa visita vengono computati l'insieme \emph{pred(s,v)} dei predecess
 
 \section{Calcolo e somma delle Dipendenze}
 $\mathbf{Tempo: O(m)}$\\ 	\\
-Terminato il calcolo dei cammini minimi, del loro numero e la popolazione dell'insieme \emph{pred(s,v)} dei predecessori,  l'algoritmo infine itera su tutti i nodi presenti nella pila salvati durante il calcolo dei cammini minimi e ne computa le rispettive dipendenze rispetto al nodo in esame. Nel corso del calcolo viene costantemente aggiornato l'indice di \emph{Betweennes Centrality} come valore all'interno del dizionario dei risultati la cui corrispondente chiave è rappresentata dall'ID del nodo esaminato.
+Terminato il calcolo dei cammini minimi, del loro numero e la popolazione dell'insieme \emph{pred(s,v)} dei predecessori,  l'algoritmo itera su tutti i nodi presenti nella pila salvati durante il calcolo dei cammini minimi e ne computa le rispettive dipendenze rispetto al nodo in esame. Nel corso del calcolo viene costantemente aggiornato l'indice di \emph{Betweennes Centrality} come valore all'interno del dizionario dei risultati la cui corrispondente chiave è rappresentata dall'ID del nodo esaminato.
 
 \section{Restituzione del risultato}
 Al termine del ciclo più esterno avviato con l'inizializzazione dell'algoritmo stesso viene restituito il dizionario contenente tutti gli indici di \emph{Betweennes Centrality} indicizzati proprio dagli ID dei nodi esaminati.

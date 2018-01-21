@@ -8,7 +8,7 @@ L'approccio risolutivo consta dell'utilizzo di operazioni pre-esistenti, fornite
 L'Algoritmo scelto per la risoluzione era un algoritmo pre-esistente frutto della ricerca accademica del prof. Ulrich Brandes della università di Konstanz in Germania, esso nacque per velocizzare la catalogazione dei nodi di un grafo per i rispettivi indici di "Betweennes Centrality". La mia implementazione, nata dallo pseudo-codice presente all'interno del Paper Accademico di Brandes, ha un differente approccio nella gestione del risultato in quanto, mentre lo scopo dell'originale era restituire semplicemente il dizionario, attraverso operazioni più o meno costanti, ho voluto far restituire all'algoritmo una tripla di elementi così costituita: \\
 \begin{easylist}[itemize]
 	& int: massimo indice di Betweennes Centrality
-	& set: tutti i nodi che condividono la Betweennes Centrality
+	& set: tutti i nodi che condividono il massimo indice di Betweennes Centrality
 	& Dizionario:	
 	&& Chiave: ID Nodo
 	&& Valore: Indice di Betweennes Centrality del nodo \\ \\
