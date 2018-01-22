@@ -6,7 +6,7 @@ Questa Repository contiene il codice sorgente, la demo e la relazione per il Sec
 ## Descrizione Repository
 > Nella radice della Repository si trova il PDF della Relazione.
 
-> Nella Cartella Python si trova l'intero algoritmo ( conenuto nella cartella lib classe ProjUtilities.py ) e la demo contenuta nel file main.py
+> Nella Cartella Python si trova l'intero algoritmo ( conenuto nella cartella lib classe ProjUtilities.py ) e la demo contenuta nel file main.py è inoltre presente un file CHANGELOG dove sono riportate le due modifiche più importanti fatte alle librerie forniteci attraverso la pagina di GitHub del Corso
 
 > Nella Cartella TeX si trova il sorgente della Relazione con tutta la sua struttura interna nelle varie cartelle
 
