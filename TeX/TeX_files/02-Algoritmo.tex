@@ -3,7 +3,7 @@
 
 \section{Fase Preliminare ( SOLO VERSIONE DEMO )}
 $\mathbf{Tempo: O(n^2)}$\\ 	\\
-Nella fase preliminare l'algoritmo crea un grafo, in maniera pseudo-randomica, attraverso i metodi \emph{generateAcycleGraph()} o  \emph{generateCyclicGraph()} ( contenuti in ProjUtilities).
+Nella fase preliminare l'algoritmo crea un grafo, in maniera pseudo-randomica, attraverso i metodi \emph{generateAcycleGraph()} o  \emph{generateCyclicGraph()} ( contenuti in ProjUtilities ).
 Il presente metodo, per quanto veloce possa essere il tempo di esecuzione è pari ad un O($n^2$). Chiaramente \'e un metodo esistente solo nella DEMO dell'algoritmo mentre la sua implementazione pura non prevede affatto questa parte ragion per cui nel calcolo totale ho ignorato tale risultato.
 \newline
 \newline
@@ -49,12 +49,12 @@ R: (17.06666666666667, \{1\}, \{0: 1.9, 1: 17.06666666666667, 2: 17.066666666666
 
 \section{Inizializzazione}
 $\mathbf{Tempo: O(n)}$\\ 	\\
-L'inizializzazione dell'algoritmo consta di alcuni allocamenti preventivi di spazio in memoria, procede quindi ad inizializzare da subito il dizionario "C" ponendo a zero tutti i valori ed indicizzandoli con gli ID dei nodi del grafo. Procede quindi ad iterare su ogni singolo nodo del grafo da cui si evince subito che l'algoritmo si carica di una complessità temporale $O(n)$
+L'inizializzazione dell'algoritmo consta di alcuni allocamenti preventivi di spazio in memoria, procede quindi ad inizializzare da subito il dizionario "R" ponendo a zero tutti i valori ed indicizzandoli con gli ID dei nodi del grafo. Procede quindi ad iterare su ogni singolo nodo del grafo da cui si evince subito che l'algoritmo si carica di una complessità temporale $O(n)$
 
 \section{Calcolo dei Cammini Minimi}
 $\mathbf{Tempo: O(m)}$\\ 	\\
 Esegue una visita del grafo a partire dall'attuale nodo esaminato ( praticamente una BFS nel caso di grafi non pesati ), la particolarità è il suo tempo di esecuzione che, secondo il Corollario 4 del Paper di Brandes, sia pari ad $O(m)$
-Durante questa visita vengono computati l'insieme \emph{pred(s,v)} dei predecessori che giacciono sui cammini mini ed il numero di quest'ultimi tra $s$ e $v$ ( $\delta_{sv}$)
+Durante questa visita vengono computati l'insieme \emph{pred(s,v)} dei predecessori che giacciono sui cammini mini ed il numero di quest'ultimi tra $s$ e $v$ ( $\delta_{sv}$ )
 
 \section{Calcolo e somma delle Dipendenze}
 $\mathbf{Tempo: O(m)}$\\ 	\\

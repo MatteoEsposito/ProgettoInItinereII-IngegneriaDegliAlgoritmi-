@@ -36,7 +36,7 @@ def brandes(V, A):
     result = set([max_node_id])
 
     # Inizializzo il Dizionario C con gli id dei nodi come sue chiavi
-    C = dict((v, 0) for v in V)
+    R = dict((v, 0) for v in V)
 
     # Eseguo tutte le seguneti operazioni per ogni singolo vertice del grafo
     for s in V:
@@ -45,8 +45,12 @@ def brandes(V, A):
                                                         #           non crescente di distanza(sorgente, nodo)
         P = dict((w, []) for w in V)                    #   P[w] -> Dizionario di predecessori sui cammini minimi dalla
                                                         #           sorgente
-        σ = dict((t, 0) for t in V); σ[s] = 1           #   σ[t] -> Numero di cammini minimi σ[s,v]
-        δ = dict((t, -1) for t in V); δ[s] = 0          #   δ[t] -> Dipendenza della sorgente verso ogni nodo del grafo
+
+        σ = dict((t, 0) for t in V)                     #   σ[t] -> Numero di cammini minimi σ[s,v]
+        σ[s] = 1
+        d = dict((t, -1) for t in V)                    #   d[t] -> Dipendenza della sorgente verso ogni nodo del grafo
+        d[s] = 0
+
         Q = deque([])                                   #   Coda
         Q.append(s)
 
@@ -66,18 +70,18 @@ def brandes(V, A):
                 #   incremento il valora di dipendenza della
                 #   sorgente dal nodo in esame
 
-                if δ[w] < 0:
+                if d[w] < 0:
                     Q.append(w)
-                    δ[w] = δ[v] + 1
+                    d[w] = d[v] + 1
 
                 #   Ora mi chiedo se effettivamente
                 #   l'arco in esame si trova su un cammino minimo
                 #   in caso affermativo aggiungo tale nodo alla lista dei predecessori
-                if δ[w] == δ[v] + 1:
+                if d[w] == d[v] + 1:
                     σ[w] = σ[w] + σ[v]
                     P[w].append(v)
 
-        temp = dict((v, 0) for v in V)
+        δ = dict((v, 0) for v in V)
 
         #   Passiamo ora alla "propagazione" della "dependency" dei nodi
         #   nella pila S per poi concludere con il computo
@@ -90,17 +94,17 @@ def brandes(V, A):
 
             #   Calcolo la "dependency" tra s ed ogni vertice w presente in P
             for v in P[w]:
-                temp[v] = temp[v] + (σ[v]/σ[w]) * (1 + temp[w])
+                δ[v] = δ[v] + (σ[v]/σ[w]) * (1 + δ[w])
 
                 if w != s:
-                    C[w] = C[w] + temp[w]
+                    R[w] = R[w] + δ[w]
 
                 #   Modifiche all'algoritmo originale:
                 #   -> aggiunta del check sul valore massimo
                 #   -> aggiunta del'insieme dei nodi di valore massimo
                 #   -> modificata quindi la tipologia di struttra dati del return
 
-                if max_node_value == C[w] and max_node_value != 0:
+                if max_node_value == R[w] and max_node_value != 0:
                     result.update([w])
                     #   L'algoritmo, ovviamente, risente di questa oeprazione in quanto
                     #   la complessità di questa operazione è O(len(result))
@@ -109,9 +113,9 @@ def brandes(V, A):
                     #   l'algoritmo non esegue alcuna di queste operazioni.
 
 
-                if max_node_value < C[w]:
-                    max_node_value = C[w]
+                if max_node_value < R[w]:
+                    max_node_value = R[w]
                     max_node_id = w
                     result = set([max_node_id])
 
-    return max_node_value, result, C
+    return max_node_value, result, R

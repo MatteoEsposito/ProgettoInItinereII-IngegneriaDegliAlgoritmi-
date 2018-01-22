@@ -1,14 +1,14 @@
 \begin{minipage}{0.49\linewidth}
 	\begin{Verbatim}[frame=topline,numbers=left,label=Codice,framesep=3mm]
 	
-temp = dict((v, 0) for v in V)
+delta = dict((v, 0) for v in V)
 	
 while S:
   w = S.pop()
   for v in P[w]:
-     temp[v] = temp[v] + (g[v]/g[w]) * (1 + temp[w])
+     delta[v] = delta[v] + (sg[v]/sg[w]) * (1 + delta[w])
      if w != s:
-        C[w] = C[w] + temp[w]
+        R[w] = R[w] + delta[w]
         
 	\end{Verbatim}
 \end{minipage}\hfill
